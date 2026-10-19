@@ -154,7 +154,7 @@ public class Utils {
 
     public static String getServerURL(Context context) {
         String device = SystemProperties.get(Constants.PROP_NEXT_DEVICE,
-                SystemProperties.get(Constants.PROP_DEVICE));
+                org.evolution.build.Device.VALUE);
 
         String serverUrl = context.getString(R.string.updater_server_url);
 
@@ -163,13 +163,13 @@ public class Utils {
 
     public static String getUpgradeBlockedURL(Context context) {
         String device = SystemProperties.get(Constants.PROP_NEXT_DEVICE,
-                SystemProperties.get(Constants.PROP_DEVICE));
+                org.evolution.build.Device.VALUE);
         return context.getString(R.string.blocked_update_info_url, device);
     }
 
     public static String getChangelogURL(Context context) {
         String device = SystemProperties.get(Constants.PROP_NEXT_DEVICE,
-                SystemProperties.get(Constants.PROP_DEVICE));
+                org.evolution.build.Device.VALUE);
         return context.getString(R.string.menu_changelog_url, device);
     }
 
