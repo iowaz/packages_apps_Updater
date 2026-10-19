@@ -15,7 +15,6 @@ object DeviceInfoUtils : SettingsLibDeviceInfoUtils() {
     private const val PROP_ALLOW_MAJOR_UPGRADES = "evolution.updater.allow_major_upgrades"
     private const val PROP_BUILD_DATE = "ro.build.date.utc"
     private const val PROP_BUILD_VERSION = "ro.modversion"
-    private const val PROP_DEVICE = "ro.evolution.device"
     private const val PROP_NEXT_DEVICE = "ro.updater.next_device"
     private const val PROP_UPDATER_ALLOW_DOWNGRADING = "evolution.updater.allow_downgrading"
     private const val PROP_UPDATER_URI = "evolution.updater.uri"
@@ -35,7 +34,7 @@ object DeviceInfoUtils : SettingsLibDeviceInfoUtils() {
     val buildVersion: String = SystemProperties.get(PROP_BUILD_VERSION, "")
 
     @JvmStatic
-    val device: String = SystemProperties.get(PROP_NEXT_DEVICE, SystemProperties.get(PROP_DEVICE))
+    val device: String = SystemProperties.get(PROP_NEXT_DEVICE, org.evolution.build.Device.VALUE)
 
     @JvmStatic
     val isABDevice: Boolean = SystemProperties.getBoolean(PROP_AB_DEVICE, false)
